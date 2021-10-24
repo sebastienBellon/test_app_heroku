@@ -3,7 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 import json
 import os
 
-database_path = os.environ['DATABASE_URL']
+#database_path = os.environ['DATABASE_URL']
+database_path = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
 
 db = SQLAlchemy()
 
